@@ -1,0 +1,213 @@
+
+<h1>Laravel Eloquent</h1>
+    <h3>Retrieving Models</h3>
+    
+        <li><strong>all():</strong> Retrieve all models</li>
+        <li><strong>find($id):</strong> Find a model by its primary key</li>
+        <li><strong>findOrFail($id):</strong> Find a model by its primary key or throw an exception</li>
+        <li><strong>first():</strong> Retrieve the first model</li>
+        <li><strong>firstOrFail():</strong> Retrieve the first model or throw an exception</li>
+        <li><strong>get():</strong> Retrieve all models matching the query</li>
+        <li><strong>pluck($column):</strong> Retrieve a single column's value</li>
+        <li><strong>chunk($count, $callback):</strong> Process models in chunks</li>
+        <li><strong>where($column, $operator = null, $value = null, $boolean = 'and'):</strong> Add a basic where clause</li>
+    
+
+    <h3>Aggregates</h3>
+    
+        <li><strong>count():</strong> Get the count of models</li>
+        <li><strong>max($column):</strong> Get the maximum value of a column</li>
+        <li><strong>min($column):</strong> Get the minimum value of a column</li>
+        <li><strong>sum($column):</strong> Get the sum of a column</li>
+        <li><strong>avg($column):</strong> Get the average of a column</li>
+    
+
+    <h3>Inserting & Updating Models</h3>
+    
+        <li><strong>create(array $attributes):</strong> Save a new model and return the instance</li>
+        <li><strong>firstOrCreate(array $attributes, array $values = []):</strong> Get the first model matching the attributes or create it</li>
+        <li><strong>updateOrCreate(array $attributes, array $values = []):</strong> Update or create a model matching the attributes</li>
+        <li><strong>save():</strong> Save the model to the database</li>
+        <li><strong>update(array $attributes):</strong> Update the model in the database</li>
+        <li><strong>increment($column, $amount = 1):</strong> Increment a column's value</li>
+        <li><strong>decrement($column, $amount = 1):</strong> Decrement a column's value</li>
+    
+
+    <h3>Deleting Models</h3>
+    
+        <li><strong>delete():</strong> Delete the model from the database</li>
+        <li><strong>destroy($ids):</strong> Destroy models by primary keys</li>
+        <li><strong>forceDelete():</strong> Permanently delete a model</li>
+    
+
+    <h3>Query Scopes</h3>
+    
+        <li><strong>scopeName($query):</strong> Define a query scope</li>
+    
+
+    <h3>Relationships</h3>
+    
+        <li><strong>hasOne():</strong> Define a one-to-one relationship</li>
+        <li><strong>belongsTo():</strong> Define an inverse one-to-one or many relationship</li>
+        <li><strong>hasMany():</strong> Define a one-to-many relationship</li>
+        <li><strong>belongsToMany():</strong> Define a many-to-many relationship</li>
+        <li><strong>morphTo():</strong> Define an inverse polymorphic relationship</li>
+        <li><strong>morphOne():</strong> Define a one-to-one polymorphic relationship</li>
+        <li><strong>morphMany():</strong> Define a one-to-many polymorphic relationship</li>
+        <li><strong>morphedByMany():</strong> Define a many-to-many polymorphic relationship</li>
+    
+
+    <h3>Eager Loading</h3>
+    
+        <li><strong>with($relations):</strong> Eager load relationships</li>
+    
+
+    <h3>Constraining Eager Loads</h3>
+    
+        <li><strong>withCount($relations):</strong> Eager load relationships with count</li>
+    
+
+    <h3>Accessors & Mutators</h3>
+    
+        <li><strong>getAttribute($key):</strong> Get an attribute from the model</li>
+        <li><strong>setAttribute($key, $value):</strong> Set a given attribute on the model</li>
+        <li><strong>getOriginal($key = null, $default = null):</strong> Get the original value of an attribute</li>
+    
+
+    <h3>Timestamps</h3>
+    
+        <li><strong>touch():</strong> Update the model's updated_at timestamp</li>
+    
+
+    <h3>Other Methods</h3>
+    
+        <li><strong>toArray():</strong> Convert the model instance to an array</li>
+        <li><strong>toJson($options = 0):</strong> Convert the model instance to JSON</li>
+        <li><strong>fresh($with = []):</strong> Reload the current model instance with fresh attributes</li>
+        <li><strong>replicate():</strong> Clone the current model instance into a new, non-existing instance</li>
+    
+        
+    <hr>
+    <h3>Where Methods</h3>
+        <h4>Basic Where Clauses</h4>
+        
+            <li>where($column, $operator = null, $value = null, $boolean = 'and'): Basic where clause</li>
+            <li>orWhere($column, $operator = null, $value = null): Add an "or where" clause to the query</li>
+        
+
+        <h4>Where Clauses with Specific Comparisons</h4>
+        
+            <li>whereColumn($column1, $operator = null, $column2 = null, $boolean = 'and'): Compare two columns</li>
+            <li>orWhereColumn($column1, $operator = null, $column2 = null): Add an "or where" clause comparing two columns</li>
+        
+
+        <h4>Where Between Clauses</h4>
+        
+            <li>whereBetween($column, array $values, $boolean = 'and', $not = false): Where value is within a range</li>
+            <li>orWhereBetween($column, array $values): Add an "or where" clause within a range</li>
+            <li>whereNotBetween($column, array $values, $boolean = 'and'): Where value is not within a range</li>
+            <li>orWhereNotBetween($column, array $values): Add an "or where" clause not within a range</li>
+        
+
+        <h4>Where In Clauses</h4>
+        
+            <li>whereIn($column, $values, $boolean = 'and', $not = false): Where value is in a given array</li>
+            <li>orWhereIn($column, $values): Add an "or where" clause where value is in a given array</li>
+            <li>whereNotIn($column, $values, $boolean = 'and'): Where value is not in a given array</li>
+            <li>orWhereNotIn($column, $values): Add an "or where" clause where value is not in a given array</li>
+        
+
+        <h4>Where Null Clauses</h4>
+        
+            <li>whereNull($column, $boolean = 'and', $not = false): Where value is null</li>
+            <li>orWhereNull($column): Add an "or where" clause where value is null</li>
+            <li>whereNotNull($column, $boolean = 'and'): Where value is not null</li>
+            <li>orWhereNotNull($column): Add an "or where" clause where value is not null</li>
+        
+
+        <h4>Where Date Clauses</h4>
+        
+            <li>whereDate($column, $operator, $value, $boolean = 'and'): Where a date is matched</li>
+            <li>orWhereDate($column, $operator, $value): Add an "or where" clause for dates</li>
+        
+
+        <h4>Where Time Clauses</h4>
+        
+            <li>whereTime($column, $operator, $value, $boolean = 'and'): Where a time is matched</li>
+            <li>orWhereTime($column, $operator, $value): Add an "or where" clause for times</li>
+        
+
+        <h4>Where Day, Month, and Year Clauses</h4>
+        
+            <li>whereDay($column, $operator, $value, $boolean = 'and'): Where a day is matched</li>
+            <li>orWhereDay($column, $operator, $value): Add an "or where" clause for days</li>
+            <li>whereMonth($column, $operator, $value, $boolean = 'and'): Where a month is matched</li>
+            <li>orWhereMonth($column, $operator, $value): Add an "or where" clause for months</li>
+            <li>whereYear($column, $operator, $value, $boolean = 'and'): Where a year is matched</li>
+            <li>orWhereYear($column, $operator, $value): Add an "or where" clause for years</li>
+        
+
+        <h4>Where JSON Clauses</h4>
+        
+            <li>whereJsonContains($column, $value, $boolean = 'and'): Where a JSON array contains a value</li>
+            <li>orWhereJsonContains($column, $value): Add an "or where" clause for JSON array containing a value</li>
+            <li>whereJsonLength($column, $operator, $value, $boolean = 'and'): Where the length of a JSON array is matched</li>
+            <li>orWhereJsonLength($column, $operator, $value): Add an "or where" clause for JSON array length</li>
+        
+
+        <h4>Raw SQL Clauses</h4>
+        
+            <li>whereRaw($sql, $bindings = [], $boolean = 'and'): Add a raw where clause</li>
+            <li>orWhereRaw($sql, $bindings = []): Add a raw "or where" clause</li>
+        
+
+        <h4>Nested Where Clauses</h4>
+        
+            <li>whereNested(Closure $callback, $boolean = 'and'): Add a nested where clause</li>
+            <li>orWhereNested(Closure $callback): Add a nested "or where" clause</li>
+        
+
+        <h4>Subquery Where Clauses</h4>
+        
+            <li>whereExists(Closure $callback, $boolean = 'and', $not = false): Where a subquery exists</li>
+            <li>orWhereExists(Closure $callback, $not = false): Add an "or where" clause for existence of a subquery</li>
+            <li>whereNotExists(Closure $callback, $boolean = 'and'): Where a subquery does not exist</li>
+            <li>orWhereNotExists(Closure $callback): Add an "or where" clause for non-existence of a subquery</li>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

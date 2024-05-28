@@ -1,0 +1,84 @@
+
+<h2>Basic Directives</h2>
+<li><strong>{{ $variable }}:</strong> Echo a variable.</li>
+<li><strong>{!! $variable !!}:</strong> Echo a variable without escaping.</li>
+<li><strong>{{-- This is a comment --}}:</strong> Blade comment.</li>
+
+<h2>Control Structures</h2>
+<li><strong>@if (condition):</strong> Start an if statement.</li>
+<li><strong>@elseif (condition):</strong> Start an else-if statement.</li>
+<li><strong>@else:</strong> Start an else statement.</li>
+<li><strong>@endif:</strong> End an if statement.</li>
+<li><strong>@unless (condition):</strong> The inverse of @if.</li>
+<li><strong>@endunless:</strong> End the unless statement.</li>
+<li><strong>@isset (variable):</strong> Check if a variable is set.</li>
+<li><strong>@endisset:</strong> End the isset statement.</li>
+<li><strong>@empty (variable):</strong> Check if a variable is empty.</li>
+<li><strong>@endempty:</strong> End the empty statement.</li>
+<li><strong>@auth:</strong> Check if the user is authenticated.</li>
+<li><strong>@endauth:</strong> End the auth statement.</li>
+<li><strong>@guest:</strong> Check if the user is a guest (not authenticated).</li>
+<li><strong>@endguest:</strong> End the guest statement.</li>
+<li><strong>@switch (variable):</strong> Start a switch statement.</li>
+<li><strong>@case (value):</strong> Start a case block within switch.</li>
+<li><strong>@break:</strong> Break out of the switch statement.</li>
+<li><strong>@default:</strong> Default case within switch.</li>
+<li><strong>@endswitch:</strong> End the switch statement.</li>
+
+<h2>Loops</h2>
+<li><strong>@for ($i = 0; $i < 10; $i++):</strong> Start a for loop.</li>
+<li><strong>@endfor:</strong> End the for loop.</li>
+<li><strong>@foreach ($array as $item):</strong> Start a foreach loop.</li>
+<li><strong>@endforeach:</strong> End the foreach loop.</li>
+<li><strong>@forelse ($array as $item):</strong> Start a foreach loop with an empty check.</li>
+<li><strong>@empty:</strong> Executes if the array is empty.</li>
+<li><strong>@endforelse:</strong> End the forelse loop.</li>
+<li><strong>@while (condition):</strong> Start a while loop.</li>
+<li><strong>@endwhile:</strong> End the while loop.</li>
+
+<h2>Loops Control</h2>
+<li><strong>@continue:</strong> Skip to the next iteration of the loop.</li>
+<li><strong>@break:</strong> Exit the loop.</li>
+
+<h2>Include Statements</h2>
+<li><strong>@include('view.name'):</strong> Include a view.</li>
+<li><strong>@includeIf('view.name'):</strong> Include a view if it exists.</li>
+<li><strong>@includeWhen(condition, 'view.name'):</strong> Include a view if a condition is true.</li>
+<li><strong>@includeUnless(condition, 'view.name'):</strong> Include a view if a condition is false.</li>
+<li><strong>@includeFirst(['view.name', 'view.fallback']):</strong> Include the first view that exists.</li>
+
+<h2>Components</h2>
+<li><strong>@component('component.name'):</strong> Start defining a component.</li>
+<li><strong>@endcomponent:</strong> End the component definition.</li>
+<li><strong>@slot('slotName'):</strong> Define a slot within a component.</li>
+<li><strong>@endslot:</strong> End the slot definition.</li>
+<li><strong><x-component-name />:</strong> Include a Blade component.</li>
+
+<h2>Forms</h2>
+<li><strong>@csrf:</strong> Generate a CSRF token field.</li>
+<li><strong>@method('PUT'):</strong> Spoof the HTTP verb.</li>
+Custom Directives
+<li><strong>@directive('name'):</strong> Define a custom directive.</li>
+<li><strong>@enddirective:</strong> End the custom directive.</li>
+
+<h2>Section and Yield</h2>
+<li><strong>@section('sectionName'):</strong> Start defining a section.</li>
+<li><strong>@endsection:</strong> End the section definition.</li>
+<li><strong>@yield('sectionName'):</strong> Yield a section's content.</li>
+<li><strong>@show:</strong> End the section and yield its content immediately.</li>
+<li><strong>@append:</strong> Append content to the section.</li>
+
+<h2>Extending Layouts</h2>
+<li><strong>@extends('layout.name'):</strong> Extend a Blade layout.</li>
+<li><strong>@parent:</strong> Insert content from the parent layout.</li>
+
+<h2>Stacks</h2>
+<li><strong>@push('stackName'):</strong> Push content onto a stack.</li>
+<li><strong>@endpush:</strong> End the stack push.</li>
+<li><strong>@prepend('stackName'):</strong> Prepend content onto a stack.</li>
+<li><strong>@endprepend:</strong> End the stack prepend.</li>
+<li><strong>@stack('stackName'):</strong> Render the stack.</li>
+
+<h2>Other Directives</h2>
+<li><strong>@inject('name', 'ClassName'):</strong> Inject a class instance into the view.</li>
+<li><strong>@json($array):</strong> Convert an array to JSON.</li>
